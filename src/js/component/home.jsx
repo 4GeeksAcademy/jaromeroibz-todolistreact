@@ -1,26 +1,56 @@
-import React from "react";
+import React, { Component } from "react";
+import { InputGroup, FormControl, Input } from "react-bootstrap";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+let arr = [];
 
-//create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
-};
+class SimpleKeyEvent extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "React-bootstrap key enter event"
+    };
+    this.onKeyUp = this.onKeyUp.bind(this);
+  }
 
-export default Home;
+//Función agregar tarea
+
+  onKeyUp(event) {
+    if (event.charCode === 13) {
+      this.setState({ inputValue: event.target.value });
+	  arr.push(event.target.value);
+
+    }
+  }
+
+  render() {
+    const { inputValue } = this.state;
+
+    return (
+      <div>
+		<h1>To do list</h1>
+        <InputGroup>
+          <FormControl placeholder="Escribe la tarea" onKeyPress={this.onKeyUp} />
+        </InputGroup>
+        <hr />
+        <span>{arr.map ( (arr) => <><p>{arr}<button onClick={() => {console.log("borrar")}}>x</button></p></>)}</span>
+      </div>
+    );
+  }
+}
+
+//Función eliminar tarea
+
+// function BorrarElemento (){
+// 	arr.splice(value-1,1)
+//   }
+
+// let arr = ['gfg', 'GFG', 'g', 'GeeksforGeeks'];
+// const arrayWithoutGFG = [];
+ 
+// for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] !== 'GFG') {
+//         arrayWithoutGFG.push(arr[i]);
+//     }
+// }
+
+export default SimpleKeyEvent;
