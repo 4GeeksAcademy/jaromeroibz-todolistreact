@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 //import your own components
-import SimpleKeyEvent from "./component/home.jsx";
+import Tasks from "./component/home.jsx";
 
 //render your react application
-ReactDOM.render(<SimpleKeyEvent />, document.querySelector("#app"));
+ReactDOM.render(<Tasks />, document.querySelector("#app"));

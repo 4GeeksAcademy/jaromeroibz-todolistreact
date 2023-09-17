@@ -10,3 +10,48 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
+    text-align: center; 
+  }
+
+  .container h1 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  
+  .container .body {
+    width: 300px; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+
+  .list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .list-item button {
+    background-color: red; 
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    opacity: 0; 
+    transition: opacity 0.2s; 
+}
+
+.list-item:hover button {
+  opacity: 1; 
+}
+  
+  
+
